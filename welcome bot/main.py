@@ -18,6 +18,7 @@ async def on_member_join(member):
     embed.set_author(name = f"{member.name}#{member.discriminator}", icon_url = member.avatar_url)
     embed.set_image(url="https://share.creavite.co/uNRJZUSr40ECnMvd.gif")
     embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/893177764461547542/893339738512166932/standard.gif")
+    embed.set_footer(text="made script bye Xenozsama#8590")
     try:
       await channel.send(embed=embed)
       print(f"<@!{member.id}> has joined the server")
