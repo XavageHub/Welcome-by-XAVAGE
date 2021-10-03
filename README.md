@@ -1,1 +1,3 @@
-# Welcome-by-XAVAGE
+--hi
+
+print('XAVAGE NO999999')
