@@ -26,6 +26,24 @@ async def on_member_join(member):
       print("i can't do that")
   else:
       print("Failed to fetch channel")
+
+
+@bot.event
+async def on_member_remove(member):
+  guild = member.guild
+  channel = bot.get_channel(int(cid))
+  if channel is not None:
+    embed = discord.Embed(title=f"ได้ออกจากเซิร์ฟเวอร์ **{guild.name}** แล้ว\nหวังว่าจะได้มาพบกันอีกนะ", description=f"", color=discord.Color.from_rgb(153, 102, 255))
+    embed.set_author(name = f"{member.name}#{member.discriminator}", icon_url = member.avatar_url)
+    embed.set_image(url="https://i.imgur.com/ogeTrhI.gif")
+    try:
+      await channel.send(embed=embed)
+      print(f"<@!{member.id}> has left the server")
+    except:
+      print("i can't do that")
+  else:
+      print("Failed to fetch channel")
+
       
 
 token = os.environ.get("TOKEN")
